@@ -1,0 +1,9 @@
+setuptools~=68.2.0
+python-dotenv~=1.0.1
+mydict~=2.1.0
+colorama~=0.4.6
+six~=1.16.0
+pytest~=8.3.3
+pluggy~=1.5.0
+netmiko~=4.4.0
+pynetbox~=7.4.1
