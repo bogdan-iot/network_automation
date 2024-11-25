@@ -29,3 +29,6 @@ class NetBoxInstance(netbox_api):
                 seen_values[serial].append(entry['serial'])
 
         return duplicates
+
+    def get_all_devices(self):
+        return [x for x in self.dcim.devices.all()]
