@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "network-automation"
+version = "1.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"  # Specify the minimum Python version required
+
+[build-system]
+requires = [">=2.0"]
+build-backend = "poetry.masonry.api"
