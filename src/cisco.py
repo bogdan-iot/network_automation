@@ -1,20 +1,16 @@
-import os
-
-from dotenv import load_dotenv
+from src import environment
 from mydict import MyDict
 from netmiko import ConnectHandler
 
-load_dotenv()
-
-cisco_username = os.environ.get("CISCO_USERNAME")
-cisco_password = os.environ.get("CISCO_PASSWORD")
-
 
 class CiscoSSHDevice(object):
-    def __init__(self, hostname):
+    def __init__(self, hostname, username=None, password=None):
         self.hostname = hostname
-        self.username = cisco_username
-        self.password = cisco_password
+        self.username = username or environment.get_cisco_username()
+        self.password = password or environment.get_cisco_password()
+
+        if environment.VERBOSE:
+            print(f"Cisco username: {self.username}")
 
         netmiko_device = {
             'device_type': "cisco_ios",

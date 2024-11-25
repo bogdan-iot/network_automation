@@ -1,19 +1,12 @@
-import os
-
+from src import environment
 from collections import defaultdict
-from dotenv import load_dotenv
 from pynetbox import api as netbox_api
-
-load_dotenv()
-
-netbox_token = os.environ.get('NETBOX_TOKEN')
-netbox_url = os.environ.get('NETBOX_URL')
 
 
 class NetBoxInstance(netbox_api):
     def __init__(self, url=None, token=None):
-        self.url = url or netbox_url
-        self.token = token or netbox_token
+        self.url = url or environment.get_netbox_url()
+        self.token = token or environment.get_netbox_token()
 
         super(NetBoxInstance, self).__init__(url=self.url, token=self.token)
 
