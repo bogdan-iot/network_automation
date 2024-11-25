@@ -7,7 +7,9 @@ authors = [
 dependencies = [
     "mydict~=2.1.0"
 ]
-description = "README.md"
+
+[metadata]
+long_description_file = "README.md"
 
 [build-system]
 requires = ["setuptools>=61.3"]
