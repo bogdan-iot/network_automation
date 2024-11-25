@@ -6,5 +6,5 @@ version = "1.0"
 python = "^3.9"  # Specify the minimum Python version required
 
 [build-system]
-requires = [">=2.0"]
+requires = ["pytest~=8.3.3"]
 build-backend = "poetry.masonry.api"
