@@ -1,12 +1,13 @@
 [project]
 name = "network-automation"
-version = "1.0.0"
+version = "0.0.1"
 authors = [
     { name = "Bogdan Radu" }
 ]
 dependencies = [
     "mydict~=2.1.0"
-    ]
+]
+description = "Network Automation Library"
 
 [build-system]
 requires = ["setuptools>=61.3"]
