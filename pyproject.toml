@@ -7,6 +7,7 @@ authors = [
 dependencies = [
     "mydict~=2.1.0"
 ]
+description = "Network Automation Library"
 
 [metadata]
 long_description_file = "README.md"
