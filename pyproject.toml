@@ -8,6 +8,7 @@ dependencies = [
     "mydict~=2.1.0"
 ]
 description = "Network Automation Library"
+long_description="This is a library for Network Automation"
 
 [build-system]
 requires = ["setuptools>=61.3"]
