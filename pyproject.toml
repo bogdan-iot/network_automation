@@ -1,10 +1,13 @@
-[tool.poetry]
+[project]
 name = "network-automation"
-version = "1.0"
-
-[tool.poetry.dependencies]
-python = "^3.9"  # Specify the minimum Python version required
+version = "1.0.0"
+authors = [
+    { name = "Bogdan Radu" }
+]
+dependencies = [
+    "mydict~=2.1.0"
+    ]
 
 [build-system]
-requires = ["pytest~=8.3.3"]
-build-backend = "poetry.masonry.api"
+requires = ["setuptools>=61.3"]
+build-backend = "setuptools.build_meta"

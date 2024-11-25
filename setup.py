@@ -6,4 +6,5 @@ setup(
     packages=['src'],
     description='Network Automation Library',
     author='Bogdan Radu',
+    setup_requires=["pytest"]
 )
