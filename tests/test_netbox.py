@@ -1,10 +1,15 @@
 import json
+import os
 import pytest
 from mydict import MyDict
 from unittest.mock import MagicMock
 from src.netbox import NetBoxInstance
 
-with open("mock_data_netbox.json", "r") as f:
+current_dir = os.path.dirname(__file__)
+
+test_file_path = os.path.join(current_dir, 'mock_data_netbox.json')
+
+with open(test_file_path, "r") as f:
     netbox_data = json.load(f)
     mock_devices = [MyDict(x) for x in netbox_data["devices"]]
     mock_prefixes = [MyDict(x) for x in netbox_data["prefixes"]]
