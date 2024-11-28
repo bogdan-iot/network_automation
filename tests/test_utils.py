@@ -1,9 +1,6 @@
 from src.utils import ip_reachable
 from unittest.mock import patch
 
-# Assuming the ip_reachable function is defined in a module called "network_utils"
-# from network_utils import ip_reachable
-
 
 @patch("subprocess.call")
 def test_ip_reachable_success(mock_subprocess_call):

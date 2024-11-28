@@ -1,9 +1,9 @@
 def ip_reachable(host):
     """
-    Returns True if host (str) responds to a ping request.
-    Remember that a host may not respond to a ping (ICMP) request even if the host name is valid.
+    Checks if a host responds to a ping request.
+    :param host: Hostname or IP address to be checked
+    :return: True if the host is alive, false otherwise
     """
-
     import platform
     import subprocess
 

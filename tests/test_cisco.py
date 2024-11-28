@@ -1,6 +1,5 @@
 import json
 import os
-import pytest
 import unittest
 from mydict import MyDict
 from unittest.mock import patch, MagicMock
@@ -40,7 +39,6 @@ class TestCiscoSSHDevice(unittest.TestCase):
 
         # Ensure send_command was called with the correct command
         mock_connection.send_command.assert_called_once_with('show interface', use_textfsm=True)
-
 
     @patch('src.cisco.ConnectHandler')  # Mock the ConnectHandler class
     def test_get_device_serial(self, mock_connect_handler):
