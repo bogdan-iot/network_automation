@@ -23,5 +23,5 @@ class NetBoxInstance(netbox_api):
 
         return duplicates
 
-    def get_all_devices(self):
-        return [x for x in self.dcim.devices.all()]
+    def get_prefixes_number(self):
+        return len(self.ipam.prefixes.all())

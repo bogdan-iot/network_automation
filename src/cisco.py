@@ -17,7 +17,7 @@ class CiscoSSHDevice(object):
             'ip': self.hostname,
             'username': self.username,
             'password': self.password,
-            'secret': self.password,
+            'secret': self.password
         }
         self.conn = ConnectHandler(**netmiko_device)
 

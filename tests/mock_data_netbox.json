@@ -1,0 +1,27 @@
+{
+  "devices": [
+    {
+      "serial": "ABC123",
+      "name": "Device1"
+    },
+    {
+      "serial": "DEF456",
+      "name": "Device2"
+    },
+    {
+      "serial": "ABC123",
+      "name": "Device3"
+    }
+  ],
+  "prefixes": [
+    {
+      "prefix": "10.1.0.0/16",
+      "vlan": 10
+    },
+    {
+      "prefix": "10.2.0.0/16",
+      "vlan": 20
+    }
+
+  ]
+}
