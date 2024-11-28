@@ -1,11 +1,12 @@
 [project]
 name = "network-automation"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
     { name = "Bogdan Radu" }
 ]
 dependencies = [
-    "mydict~=2.1.0"
+    "mydict~=2.1.0",
+    "python-dotenv~=1.0.1"
 ]
 description = "Network Automation Library"
 dynamic = ["readme"]
