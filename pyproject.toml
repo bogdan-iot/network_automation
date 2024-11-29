@@ -1,16 +1,17 @@
-[project]
-name = "network-automation"
-version = "0.0.5"
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "network_automation"
+version = "0.0.6"
+license = { file = "LICENSE" }
+description = "Network Automation Library"
 authors = [
     { name = "Bogdan Radu" }
 ]
-dependencies = [
-    "mydict~=2.1.0",
-    "python-dotenv~=1.0.1"
-]
-description = "Network Automation Library"
-dynamic = ["readme"]
-license = { file = "LICENSE" }
+readme = "README.md"
+
 classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -18,11 +19,8 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.8"
 
-[tool.setuptools.dynamic]
-readme = {file=["README.md"], content-type="text/markdown"}
-
-[build-system]
-requires = ["setuptools>=61.3"]
-build-backend = "setuptools.build_meta"
+[tool.poetry.dependencies]
+python = ">=3.8.0"
+mydict = "2.1.0"
+python-dotenv = ">1.0.0"

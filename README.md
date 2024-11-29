@@ -8,7 +8,7 @@ This contains various functions for network automation
 ## Installation
 
 ```shell
-$ pip install network-automation
+$ pip install network_automation
 ```
 
 ## Modules
@@ -26,5 +26,5 @@ The tests passed successfully with **Python 3.9**.
 
 ```shell
 $ pip install pytest
-$ pytest network-automation -v
+$ pytest network_automation -v
 ```
