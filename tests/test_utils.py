@@ -1,4 +1,4 @@
-from src import ip_reachable
+from src.network_automation.utils import ip_reachable
 from unittest.mock import patch
 
 

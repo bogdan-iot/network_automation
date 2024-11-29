@@ -3,7 +3,7 @@ import os
 import pytest
 from mydict import MyDict
 from unittest.mock import MagicMock
-from network_automation import NetBoxInstance
+from src.network_automation.netbox import NetBoxInstance
 
 current_dir = os.path.dirname(__file__)
 
