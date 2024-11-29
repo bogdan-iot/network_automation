@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "network_automation"
 version = "0.0.6"
-license = { file = "LICENSE" }
+license = "GPL-3.0-or-later"
 description = "Network Automation Library"
 authors = [
     { name = "Bogdan Radu" }
