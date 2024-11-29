@@ -3,7 +3,7 @@ import os
 import unittest
 from mydict import MyDict
 from unittest.mock import patch, MagicMock
-from src.network_automation import CiscoSSHDevice
+from network_automation import CiscoSSHDevice
 
 current_dir = os.path.dirname(__file__)
 
