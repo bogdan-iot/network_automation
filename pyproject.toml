@@ -11,7 +11,7 @@ description = "Network Automation Library"
 authors = [ "Bogdan Radu" ]
 
 packages = [
-    { include = "network_automation", from = "src" }
+    { include = "src" }
 ]
 classifiers = [
     "Programming Language :: Python :: 3.8",
