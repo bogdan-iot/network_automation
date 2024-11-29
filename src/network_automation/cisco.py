@@ -1,4 +1,4 @@
-from src.network_automation import environment
+from network_automation import environment
 from mydict import MyDict
 from netmiko import ConnectHandler
 

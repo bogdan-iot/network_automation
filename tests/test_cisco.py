@@ -3,7 +3,7 @@ import os
 import unittest
 from mydict import MyDict
 from unittest.mock import patch, MagicMock
-from src.network_automation.cisco import CiscoSSHDevice
+from network_automation.cisco import CiscoSSHDevice
 
 current_dir = os.path.dirname(__file__)
 
@@ -16,7 +16,7 @@ with open(test_file_path, "r") as f:
 
 
 class TestCiscoSSHDevice(unittest.TestCase):
-    @patch('src.network_automation.cisco.ConnectHandler')  # Mock the ConnectHandler class
+    @patch('network_automation.cisco.ConnectHandler')  # Mock the ConnectHandler class
     def test_get_interface_details(self, mock_connect_handler):
         # Set up the mock connection's behavior
         mock_connection = MagicMock()
@@ -40,7 +40,7 @@ class TestCiscoSSHDevice(unittest.TestCase):
         # Ensure send_command was called with the correct command
         mock_connection.send_command.assert_called_once_with('show interface', use_textfsm=True)
 
-    @patch('src.network_automation.cisco.ConnectHandler')  # Mock the ConnectHandler class
+    @patch('network_automation.cisco.ConnectHandler')  # Mock the ConnectHandler class
     def test_get_device_serial(self, mock_connect_handler):
         # Set up the mock connection's behavior
         mock_connection = MagicMock()

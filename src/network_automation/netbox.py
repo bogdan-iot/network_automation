@@ -1,5 +1,5 @@
 import ipaddress
-from src.network_automation import environment
+from network_automation import environment
 from collections import defaultdict
 from pynetbox import api as netbox_api
 
