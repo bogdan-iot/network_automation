@@ -8,9 +8,7 @@ version = "0.0.6"
 license = "LICENSE"
 readme = "README.md"
 description = "Network Automation Library"
-authors = [
-    { name = "Bogdan Radu" }
-]
+authors = [ "Bogdan Radu" ]
 
 packages = [
     { include = "network_automation", from = "src" }
