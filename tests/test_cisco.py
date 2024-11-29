@@ -38,7 +38,7 @@ class TestCiscoSSHDevice(unittest.TestCase):
             self.assertEqual(result[idx].description, interface['description'])
 
         # Ensure send_command was called with the correct command
-        mock_connection.send_command.assert_called_once_with('show interface', use_textfsm=True)
+        mock_connection.send_command.assert_called_once_with('show interface', use_textfsm=True, read_timeout=30)
 
     @patch('network_automation.cisco.ConnectHandler')  # Mock the ConnectHandler class
     def test_get_device_serial(self, mock_connect_handler):
