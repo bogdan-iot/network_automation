@@ -1,7 +1,14 @@
 import ipaddress
+import logging
 from network_automation import environment
 from collections import defaultdict
 from pynetbox import api as netbox_api
+
+logging.basicConfig(filename='netbox.log',
+                    encoding='utf-8',
+                    level=logging.INFO,
+                    format='%(asctime)s %(message)s',
+                    datefmt='%d/%m/%Y %H:%M:%S')
 
 
 class NetBoxInstance(netbox_api):
@@ -47,8 +54,7 @@ class NetBoxInstance(netbox_api):
             # Get the corresponding network
             subnet = ipaddress.ip_network(ip_address, False)
             if str(subnet) not in prefixes:
-                if environment.VERBOSE:
-                    print(f"Adding {ip_address} to the list")
+                logging.info(f"Adding {ip_address} to the list")
                 result.append(str(subnet))
 
         return result
@@ -68,8 +74,8 @@ class NetBoxInstance(netbox_api):
             # If the list has one member, set that IP address to be the primary IP of the device
             if len(device_ip_addresses) == 1:
                 only_ip = device_ip_addresses[0]
-                print(f"Updating primary IP of {device} to {only_ip}")
+                print(f"Updating primary IP of {device} to {only_ip}...")
                 if device.update({"primary_ip4": only_ip.id}):
-                    return True
-
-        return False
+                    logging.info(f"Updated primary IP of {device} to {only_ip}")
+                else:
+                    logging.error(f"Failed to update primary IP of {device}")
