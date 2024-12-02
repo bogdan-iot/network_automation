@@ -47,6 +47,29 @@ class NetBoxInstance(netbox_api):
             # Get the corresponding network
             subnet = ipaddress.ip_network(ip_address, False)
             if str(subnet) not in prefixes:
+                if environment.VERBOSE:
+                    print(f"Adding {ip_address} to the list")
                 result.append(str(subnet))
 
         return result
+
+    def assign_primary_ip(self):
+        """
+        For devices that have only 1 IP address, that IP address will be assigned as primary IP
+        :return:
+        """
+        # Get a list of all devices which don't have a primary IP
+        devices_without_ip = [x for x in self.dcim.devices.all() if not x.primary_ip]
+
+        for device in devices_without_ip:
+            # Get a list of IP addresses assigned to the device
+            device_ip_addresses = [x for x in self.ipam.ip_addresses.filter(device_id=device.id)]
+
+            # If the list has one member, set that IP address to be the primary IP of the device
+            if len(device_ip_addresses) == 1:
+                only_ip = device_ip_addresses[0]
+                print(f"Updating primary IP of {device} to {only_ip}")
+                if device.update({"primary_ip4": only_ip.id}):
+                    return True
+
+        return False
