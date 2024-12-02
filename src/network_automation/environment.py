@@ -1,3 +1,4 @@
+import logging
 import os
 import pathlib
 from dotenv import load_dotenv
@@ -7,6 +8,13 @@ dotenv_current_path = os.path.join(pathlib.Path().resolve(), '.env')
 dotenv_home_path = os.path.join(pathlib.Path.home().resolve(), '.env')
 load_dotenv(dotenv_home_path)
 load_dotenv(dotenv_current_path)
+
+# Logging config
+logging.basicConfig(filename='network_automation.log',
+                    encoding='utf-8',
+                    level=logging.INFO,
+                    format='%(levelname)s:%(asctime)s %(message)s',
+                    datefmt='%d/%m/%Y %H:%M:%S')
 
 # GENERAL SETTINGS
 VERBOSE = False

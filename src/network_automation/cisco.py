@@ -1,3 +1,4 @@
+import logging
 from network_automation import environment
 from mydict import MyDict
 from netmiko import ConnectHandler
@@ -16,9 +17,6 @@ class CiscoSSHDevice(object):
         self.username = username or environment.get_cisco_username()
         self.password = password or environment.get_cisco_password()
 
-        if environment.VERBOSE:
-            print(f"Cisco username: {self.username}")
-
         netmiko_device = {
             'device_type': "cisco_ios",
             'ip': self.hostname,
@@ -36,6 +34,7 @@ class CiscoSSHDevice(object):
         :param timeout: Set the timeout for executing the command and getting the result
         :return:
         """
+        logging.info(f"Executing command '{command}' on {self.hostname}")
         if parse:
             return self.conn.send_command(command, use_textfsm=True, read_timeout=timeout)
 
@@ -57,3 +56,14 @@ class CiscoSSHDevice(object):
         """
         serial = self.conn.send_command('show version | include Processor')
         return serial.split(' ')[-1]
+
+    def get_cdp_neighbors(self, parse=True):
+        """
+        This method retrieves the CDP neighbors of the device
+        :return:
+        """
+        command = 'show cdp neighbors'
+        if parse:
+            return self.conn.send_command(command, use_textfsm=True)
+
+        return self.conn.send_command(command)

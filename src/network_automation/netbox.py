@@ -4,12 +4,6 @@ from network_automation import environment
 from collections import defaultdict
 from pynetbox import api as netbox_api
 
-logging.basicConfig(filename='netbox.log',
-                    encoding='utf-8',
-                    level=logging.INFO,
-                    format='%(asctime)s %(message)s',
-                    datefmt='%d/%m/%Y %H:%M:%S')
-
 
 class NetBoxInstance(netbox_api):
     """
